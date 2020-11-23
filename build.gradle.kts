@@ -12,7 +12,7 @@ plugins {
 }
 
 repositories {
-    mavenLocal()
+    mavenCentral()
     maven { url = uri("https://repo.spring.io/snapshot") }
     maven { url = uri("https://repo.spring.io/milestone") }
     maven { url = uri("https://repo.maven.apache.org/maven2/") }
@@ -25,15 +25,14 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jdbc:2.3.0.RC1")
     implementation("org.springframework.boot:spring-boot-starter-web:2.3.0.RC1")
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf:2.3.0.RC1")
-    implementation("org.flywaydb:flyway-core:6.4.1")
-    implementation("com.github.ben-manes.caffeine:caffeine:2.8.2")
-    implementation("org.springframework.cloud:spring-cloud-starter-sleuth:2.2.2.RELEASE")
-    implementation("com.wavefront:wavefront-spring-boot-starter:2.0.0-RC1")
     implementation("org.webjars:webjars-locator-core:0.45")
     implementation("org.webjars:jquery:2.2.4")
     implementation("org.webjars:jquery-ui:1.11.4")
     implementation("org.webjars:bootstrap:3.3.6")
     implementation("org.springframework.boot:spring-boot-devtools:2.3.0.RC1")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
     runtimeOnly("mysql:mysql-connector-java:8.0.20")
     testImplementation("org.springframework.boot:spring-boot-starter-test:2.3.0.RC1")
     testImplementation("org.testcontainers:mysql:1.14.1")

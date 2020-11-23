@@ -46,13 +46,13 @@ spec:
           mountPath: /logs/petclinic
         securityContext:
           runAsUser: 1000
-        readinessProbe:
+        livenessProbe:
           httpGet: 
             path: /manage/health
             port: 8080
           initialDelaySeconds: 10
           periodSeconds: 10
-          successThreshold: 3
+          failureThreshold: 2
       volumes:
       - name: log-mount
         hostPath:
