@@ -14,12 +14,12 @@
 다음 명령어를 수행해 build.gradle.kts 에 정의된 jib plugin 을 통해서 spring-petclinic-data-jdbc:2.3.0.RC1 이미지를 생성합니다.
 
 ```
-gradle jibDockerBuild
+./gradlew jibDockerBuild
 ```
 jar 파일을 별도로 생성하고 싶다면 gradle build 명령어로 build/libs 하위에 jar 파일을 생성합니다. 
 
 ```
-gradle build
+./gradlew build
 ```
 
 ## 2. Kubernetes cluster 배포를 위한 metadata 수정
@@ -43,7 +43,7 @@ gradle build
 * Deployment
 
 ```
-kubectl apply -f mysql.yaml
+kubectl apply -f kubernetes/mysql.yaml
 ```
 
 mysql 이 정상적으로 배포된 후 다음 명령어를 수행해 Kubernetes cluster 에 아래의 petclinic 샘플 어플리케이션의 오브젝트를 배포합니다.
@@ -51,7 +51,7 @@ mysql 이 정상적으로 배포된 후 다음 명령어를 수행해 Kubernetes
 * Deployment
 
 ```
-kubectl apply -f petclinic.yaml
+kubectl apply -f kubernetes/petclinic.yaml
 ```
 
 helm 을 이용하여 nginx-ingress 를 배포합니다.
@@ -65,7 +65,7 @@ helm install my-release ingress-nginx/ingress-nginx
 nginx-ingress-controller 를 통해 petclinic 샘플 어플리케이션을 접속하도록 ingress 오브젝트를 배포합니다.
 
 ```
-kubectl apply -f ingress.yaml
+kubectl apply -f kubernetes/ingress.yaml
 ```
 
 ## 4. 정상 배포 확인
