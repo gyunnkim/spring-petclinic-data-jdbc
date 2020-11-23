@@ -26,6 +26,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web:2.3.0.RC1")
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf:2.3.0.RC1")
     implementation("org.webjars:webjars-locator-core:0.45")
+    implementation("org.flywaydb:flyway-core:6.4.1")
     implementation("org.webjars:jquery:2.2.4")
     implementation("org.webjars:jquery-ui:1.11.4")
     implementation("org.webjars:bootstrap:3.3.6")
